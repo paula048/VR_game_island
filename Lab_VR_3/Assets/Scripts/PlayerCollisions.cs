@@ -4,25 +4,34 @@ using UnityEngine;
 
 public class PlayerCollisions : MonoBehaviour
 {
-
+/*
     bool doorIsOpen = false;
     float doorTimer = 0.0f;
     public float doorOpenTime = 3.0f;
     public AudioClip doorOpenSound;
     public AudioClip doorShutSound;
-
+*/
     GameObject currentDoor;
 
 
-    // Start is called before the first frame update
+  
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+
     void Update()
     {
+        RaycastHit hit;
+        if(Physics.Raycast (transform.position, transform.forward, out hit, 3)) {
+            if(hit.collider.gameObject.tag=="playerDoor"){
+                currentDoor = hit.collider.gameObject;
+                currentDoor.SendMessage("DoorCheck");
+            }
+        }
+
+        /*
         if(doorIsOpen){
             doorTimer += Time.deltaTime;
             if(doorTimer > doorOpenTime){
@@ -31,9 +40,10 @@ public class PlayerCollisions : MonoBehaviour
                 doorTimer = 0.0f;
             }
         }
+        */
     }
 
-
+/*
     void OnControllerColliderHit(ControllerColliderHit hit){
 
         if(hit.gameObject.tag == "playerDoor" && doorIsOpen == false){
@@ -45,7 +55,7 @@ public class PlayerCollisions : MonoBehaviour
         }
     }
 
-/*
+
     void OpenDoor(GameObject door){
         doorIsOpen = true;
         door.GetComponent<AudioSource>().PlayOneShot(doorOpenSound);
@@ -58,8 +68,6 @@ public class PlayerCollisions : MonoBehaviour
         door.GetComponent<AudioSource>().PlayOneShot(doorShutSound);
         door.transform.parent.GetComponent<Animation>().Play("doorshut");
     }
-*/
-
 
     void Door(AudioClip aClip, bool openCheck, string animName, GameObject thisDoor){
         if(openCheck == true){
@@ -70,7 +78,7 @@ public class PlayerCollisions : MonoBehaviour
 
     }   
 
-
+*/
 
 
 

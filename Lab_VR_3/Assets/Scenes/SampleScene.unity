@@ -416,26 +416,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1089070657 stripped
+--- !u!1 &1394107798 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
-  m_PrefabInstance: {fileID: 1840119230}
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 7b5b57d547ed446c795e8b86e881b006, type: 3}
+  m_PrefabInstance: {fileID: 1894972232}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1089070663
+--- !u!65 &1394107801
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394107798}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5, y: 4.9105053, z: 5}
+  m_Center: {x: 0.069244385, y: 2.3226938, z: 2.743103}
+--- !u!114 &1394107802
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1089070657}
+  m_GameObject: {fileID: 1394107798}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c7e555b21300154293a2efc80f88deb, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ce285d7cf075564e970c2bc3e392009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorOpenTime: 3
-  doorOpenSound: {fileID: 8300000, guid: 0b5cb7471b5c04d53ad9211a037a15bd, type: 3}
-  doorShutSound: {fileID: 8300000, guid: 1c882c9bd2dd74915bcdcd1859c40a19, type: 3}
 --- !u!1 &1394443651 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1233657081076909810, guid: 7b5b57d547ed446c795e8b86e881b006, type: 3}
@@ -468,8 +478,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.875, y: 1.6434015, z: 5.285108}
-  m_Center: {x: -0.9375, y: 0.11640009, z: 2.6425543}
+  m_Size: {x: 1.875, y: 0.52500015, z: 3.0000007}
+  m_Center: {x: -0.9375, y: 0.18750004, z: 1.5000004}
 --- !u!82 &1394443658
 AudioSource:
   m_ObjectHideFlags: 0
@@ -566,6 +576,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1394443662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394443651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebb5189d762e41a4d80fcb443bd82fd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorOpenTime: 3
+  doorOpenSound: {fileID: 8300000, guid: 0b5cb7471b5c04d53ad9211a037a15bd, type: 3}
+  doorShutSound: {fileID: 8300000, guid: 1c882c9bd2dd74915bcdcd1859c40a19, type: 3}
 --- !u!1001 &1840119230
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -576,6 +601,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_Name
       value: FPSController
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_RootOrder
