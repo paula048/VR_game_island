@@ -685,6 +685,13 @@ MonoBehaviour:
   - {fileID: 2800000, guid: e1310e8bfc0b2431292d1a98d40925c9, type: 3}
   - {fileID: 2800000, guid: 775e0a2f5f76743edac12b01ce299a2f, type: 3}
   chargeHudGUI: {fileID: 375297721}
+  meterCharge:
+  - {fileID: 2800000, guid: 06c6b71c9c03cf84e8d681f2f9c194ff, type: 3}
+  - {fileID: 2800000, guid: bb970a363d312a345b6038ae4b38a500, type: 3}
+  - {fileID: 2800000, guid: ad5059ead4b298c42a251a87ac41504a, type: 3}
+  - {fileID: 2800000, guid: 2ded1103b15972e4dbbd2d0db2918dd8, type: 3}
+  - {fileID: 2800000, guid: 93319f30c2af15a4992dbdd133997633, type: 3}
+  meter: {fileID: 1380216977}
 --- !u!1 &1121432634
 GameObject:
   m_ObjectHideFlags: 0
@@ -789,6 +796,11 @@ RectTransform:
 --- !u!1 &1380216975 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 384623091493936490, guid: 31c03f629e3ce437ca8454fe54ce026a, type: 3}
+  m_PrefabInstance: {fileID: 1051279283}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &1380216977 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7809183297308450557, guid: 31c03f629e3ce437ca8454fe54ce026a, type: 3}
   m_PrefabInstance: {fileID: 1051279283}
   m_PrefabAsset: {fileID: 0}
 --- !u!65 &1380216979

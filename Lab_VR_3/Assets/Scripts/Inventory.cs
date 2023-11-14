@@ -13,6 +13,10 @@ public class Inventory : MonoBehaviour
     public Texture2D[] hudCharge;
     public RawImage chargeHudGUI;
 
+    // Generator
+    public Texture2D[] meterCharge;
+    public Renderer meter;
+
   
     void Start()
     {
@@ -30,6 +34,7 @@ public class Inventory : MonoBehaviour
         charge++;
         chargeHudGUI.texture = hudCharge[charge];
         HUDon();
+        meter.material.mainTexture = meterCharge[charge];
     }
 
 
@@ -38,6 +43,9 @@ public class Inventory : MonoBehaviour
             chargeHudGUI.enabled = true;
         }
     }
+
+
+    
 
 
 }
