@@ -9,6 +9,16 @@ public class Inventory : MonoBehaviour
     public static int charge = 0;
     public AudioClip collectSound;
 
+    // zapałki
+    bool haveMatches = false;
+    bool isFire = false;                //-------  added by me
+    public RawImage matchHudGUI ;
+
+    public Text textHints;          // img zapałki
+    
+
+    
+
     // HUD
     public Texture2D[] hudCharge;
     public RawImage chargeHudGUI;
@@ -43,6 +53,44 @@ public class Inventory : MonoBehaviour
             chargeHudGUI.enabled = true;
         }
     }
+
+
+    // znaleziono zapałki ?
+
+    void MatchPickup(){
+        haveMatches = true;
+        AudioSource.PlayClipAtPoint(collectSound, transform.position);
+        matchHudGUI.enabled = true;
+    }
+
+
+    void OnControllerColliderHit(ControllerColliderHit col){
+        if (col.gameObject.name == "campfire"){
+            if(haveMatches){
+                LightFire(col.gameObject);
+            } else if(!isFire){
+                textHints.SendMessage("ShowHint", "Mógłbym rozpalić ognisko do wezwania pomocy.\nTylko czym...");
+            }
+        }
+    }
+
+    void LightFire(GameObject campfire){
+        
+        ParticleSystem[] fireEmitters;
+        fireEmitters = campfire.GetComponentsInChildren<ParticleSystem>();
+
+        foreach(ParticleSystem emitter in fireEmitters){
+            emitter.Play();
+        }
+        campfire.GetComponent<AudioSource>().Play();
+
+        isFire = true;
+        matchHudGUI.enabled=false;
+        haveMatches=false;
+        
+        
+    }
+
 
 
     
